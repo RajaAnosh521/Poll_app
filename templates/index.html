@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling app Flask</title>
+</head>
+<body>
+    <h3>Polls:</h3>
+    <ul>
+        {% for key, value in polls.items() %}
+        <li><a href="{{ url_for('poll', id=key) }}">{{ value['polls'] }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('create_poll') }}">Create New Poll</a>
+</body>
+</html>
